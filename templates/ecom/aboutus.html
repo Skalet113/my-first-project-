@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Classic Home Decor</title>
+  <style>
+    body {
+      background-color: #B3E5FC; /* Fallback color */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      animation: backgroundAnimation 27s infinite;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    @keyframes backgroundAnimation {
+      0% { background-image: url("{% static 'images/c1.jpeg' %}"); }
+      11.11% { background-image: url("{% static 'images/ca.jpeg' %}"); }
+      22.22% { background-image: url("{% static 'images/cb.jpeg' %}"); }
+      33.33% { background-image: url("{% static 'images/cc.jpg' %}"); }
+      44.44% { background-image: url("{% static 'images/cd.jpg' %}"); }
+      55.55% { background-image: url("{% static 'images/ce.jpg' %}"); }
+      66.66% { background-image: url("{% static 'images/cf.jpeg' %}"); }
+      77.77% { background-image: url("{% static 'images/cg.jpeg' %}"); }
+      88.88% { background-image: url("{% static 'images/ch.jpeg' %}"); }
+      100% { background-image: url("{% static 'images/ci.jpeg' %}"); }
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000; /* Ensures the navbar stays on top */
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .content {
+      padding: 20px;
+      margin-top: 70px; /* Adjust to avoid navbar overlap */
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+    }
+
+    h3 {
+      text-align: center;
+    }
+
+    .about-us {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  {% if request.user.is_authenticated %}
+    {% include "ecom/customer_navbar.html" %}
+  {% else %}
+    {% include "ecom/navbar.html" %}
+  {% endif %}
+  
+  <div class="content">
+    <h3>“Classic Home Decor and Furnishings Hub- Your Best Option.”</h3>
+    <div class="about-us">
+      <h2>About Us</h2>
+      <p>Welcome to Classic Home Decor, where elegance meets comfort. Our mission is to bring timeless beauty and exceptional quality into your home. We specialize in offering a curated selection of home decor items that blend classic styles with modern functionality.</p>
+      <p>Our collection includes a wide range of products from luxurious furniture and lighting to exquisite accessories and art.</p>    
+      <p>Thank you for choosing Classic Home Decor and Furnishings Hub. We look forward to helping you transform your house into a beautiful and inviting home.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2024 Classic Home Decor. All rights reserved.</p>
+  </div>
+</body>
+
+</html>
